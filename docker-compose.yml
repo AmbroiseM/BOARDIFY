@@ -28,6 +28,8 @@ services:
       - TYPEORM_USERNAME=postgres
       - TYPEORM_PASSWORD=postgres
       - TYPEORM_DATABASE=my_kanboard
+      - JWT_SECRET=very_very_secret
+      - JWT_EXPIRATION=1h
     networks:
       - app-network
 
