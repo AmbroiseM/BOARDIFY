@@ -25,6 +25,6 @@ If anyone comes across this repo and sees something that can be improved in the 
 
 ##  Disclaimer
 
-I'm not a front-end expert/ UI-UX designer grand master, i did what i can 😂
+I'm not a front-end expert/ UI-UX designer grand master, i do what i can 😂
 
 ![Alt Text](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWp2NWE3dnY5OWJnNjhzdWo4bXA2cnJ0MjZiNGRtYmRyaGx0bm1yZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZF1CaTcZ7fxk2Y5ui1/giphy.webp) 
