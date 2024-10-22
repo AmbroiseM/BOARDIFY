@@ -27,26 +27,26 @@ export default function Login() {
         <div className="left">
           <h1
             style={{
-              fontSize: "70px",
+              fontSize: "50px",
               marginTop: "5px",
               color: "rgba(1,116,243,255)",
             }}
           >
-            BOARDIFY{" "}
+            {"BOARDIFY "}
           </h1>
 
           <div className="card">
             <Form
               name="login"
               initialValues={{ remember: true }}
-              style={{ width: "450px", marginTop: "5px" }}
+              style={{ width: "450px", marginTop: "20px" }}
               onFinish={handleLogin}
             >
               <Form.Item
                 name="email"
                 rules={[{ required: true, message: "Please input your Mail!" }]}
               >
-                <h3 style={{ color: "rgba(20,77,154,255)" }}>
+                <h3 style={{ color: "rgba(20,77,154,255)", fontSize: "20px" }}>
                   Email <span style={{ color: "red" }}>*</span>
                   <Input
                     className="input"
@@ -66,7 +66,7 @@ export default function Login() {
                   { required: true, message: "Please input your Password!" },
                 ]}
               >
-                <h3 style={{ color: "rgba(20,77,154,255)" }}>
+                <h3 style={{ color: "rgba(20,77,154,255)",  fontSize: "20px"  }}>
                   Password <span style={{ color: "red" }}>*</span>
                   <Input.Password
                     size="large"
