@@ -1,0 +1,18 @@
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  
+  @media (min-height: 720px) and (max-height: 1080px) {
+    .chat-container {
+      height: calc(100vh - 230px);
+    }
+  }
+  
+  @media (min-height: 400px) and (max-height: 719px) {
+    .chat-container {
+        height: calc(100vh - 240px); 
+}
+}

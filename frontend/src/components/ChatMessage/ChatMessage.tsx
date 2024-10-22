@@ -29,14 +29,13 @@ export default function ChatMessage({ room }: Props) {
     <>
       <div
         ref={chatContainerRef}
-        className="scroll"
+        className="scroll message-container"
         style={{
           display: "flex",
           flexDirection: "column",
           backgroundColor: "white",
           width: "90%",
           overflowY: "auto",
-          height: "600px",
           padding: "10px",
           borderRadius: "10px",
           border: "1px solid #d9d9d9",
@@ -81,9 +80,9 @@ export default function ChatMessage({ room }: Props) {
                   backgroundColor:
                     user?.id === message.senderId ? "#1677ff" : "#DCF8C6",
                   color: user?.id === message.senderId ? "white" : "black",
-                  padding: "10px",
+                  padding: "13px",
                   borderRadius: "10px",
-                  fontSize: "15px",
+                  fontSize: "17px",
                   fontWeight: "500",
                   width: "fit-content",
                   float: user?.id === message.senderId ? "left" : "right",

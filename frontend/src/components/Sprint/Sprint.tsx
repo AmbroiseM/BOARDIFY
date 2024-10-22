@@ -149,7 +149,11 @@ export default function Sprint({ name }: Props) {
           <Table<Task>
             dataSource={data}
             pagination={false}
-            style={{ marginBottom: "50px", borderBottom: "3px solid #C7C7C7" }}
+            style={{
+              marginBottom: "50px",
+              borderBottom: "3px solid #C7C7C7",
+              width: "100%",
+            }}
             components={{
               body: {
                 row: DraggableRow,

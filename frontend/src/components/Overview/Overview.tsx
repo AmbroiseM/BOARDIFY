@@ -1,17 +1,17 @@
-import React from "react";
+import { Button } from "antd";
 import SprintList from "../SprintList/SprintList";
 import "./Overview.css";
-import { Button } from "antd";
 
 export default function Overview() {
   return (
     <>
       <div
-        className="scroll"
+        className="scroll overview"
         style={{
-          width: "95%",
-          height: "650px",
+          width: "90%",
           padding: "20px",
+          paddingLeft: "40px",
+          paddingRight: "40px",
           alignContent: "center",
           overflowY: "auto",
         }}

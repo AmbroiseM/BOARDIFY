@@ -1,6 +1,5 @@
-import React from "react";
-import Sprint from "../Sprint/Sprint";
 import { ConfigProvider } from "antd";
+import Sprint from "../Sprint/Sprint";
 
 export default function SprintList() {
   return (

@@ -26,9 +26,14 @@ export default function MembersList() {
   }
 
   return (
-    <>
-      <div>
-        <p style={{ fontWeight: "550", marginTop: "60px" }}>Members</p>
+    <div style={{ marginTop: "30px" }}>
+      <p style={{ fontWeight: "550" }}>Members</p>
+      <div className="scroll" style={{ 
+        height: "30vh", 
+        overflowY: "auto",
+        marginTop: "10px",
+        paddingRight: "10px",
+      }}>
         {members.map((member) => (
           <Member
             key={member.id}
@@ -40,6 +45,6 @@ export default function MembersList() {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 }

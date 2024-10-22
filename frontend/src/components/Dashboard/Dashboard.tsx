@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { Badge, Tabs } from "antd";
 import type { TabsProps } from "antd";
-import Overview from "../Overview/Overview";
-import ChatProject from "../ChatProject/ChatProject";
-import { useSocket } from "../../contexts/SocketContext";
+import { Badge, Tabs } from "antd";
+import React, { useEffect, useState } from "react";
 import { useProject } from "../../contexts/ProjectContext";
+import { useSocket } from "../../contexts/SocketContext";
+import ChatProject from "../ChatProject/ChatProject";
+import Overview from "../Overview/Overview";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -16,10 +16,10 @@ function Background({ children }: LayoutProps) {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        backgroundColor: "rgba(247,247,247,255)",
+        backgroundColor: "#f6f6f6",
         borderTop: "2px solid #d9d9d9",
         marginLeft: " -30px",
-        height: "80vh",
+        minHeight: "100vh",
         marginTop: "-20px",
       }}
     >
@@ -83,10 +83,10 @@ export default function Dashboard() {
   return (
     <>
       <Tabs
+     
         style={{
           width: "100%",
           paddingLeft: "30px",
-          height: "100%",
           borderTop: "1px solid #d9d9d9",
         }}
         defaultActiveKey="1"

@@ -1,6 +1,5 @@
-import { Card } from "antd";
-import React from "react";
 import { MoreOutlined } from "@ant-design/icons";
+import { Card } from "antd";
 import { FcBriefcase } from "react-icons/fc";
 
 export default function ProjetItem({ id, name, clicked, onClick }: any) {
@@ -18,7 +17,7 @@ export default function ProjetItem({ id, name, clicked, onClick }: any) {
       }}
       styles={{
         body: {
-          height: "50px",
+          height: "45px",
           padding: 0,
           display: "flex",
           justifyContent: "center",

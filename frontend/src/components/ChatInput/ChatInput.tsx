@@ -1,5 +1,11 @@
-import { AudioOutlined, SendOutlined } from "@ant-design/icons";
-import { Input } from "antd";
+import {
+  AudioOutlined,
+  PlusCircleFilled,
+  SendOutlined,
+  SmileOutlined,
+} from "@ant-design/icons";
+import { Input, Popover } from "antd";
+import EmojiPicker, { EmojiClickData } from "emoji-picker-react";
 import { useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import { useSocket } from "../../contexts/SocketContext";
@@ -15,15 +21,38 @@ export default function ChatInput({ room }: Props) {
   const { user } = useAuth();
 
   const suffix = (
-    <AudioOutlined
-      style={{
-        fontSize: 16,
-        color: "#1677ff",
-      }}
-    />
+    <>
+      <AudioOutlined
+        style={{
+          fontSize: 16,
+          color: "#1677ff",
+        }}
+      />
+      <PlusCircleFilled
+        style={{
+          fontSize: 16,
+          color: "#1677ff",
+        }}
+      />
+      <Popover
+        placement="top"
+        content={
+          <EmojiPicker
+            onEmojiClick={(e: EmojiClickData) => handleEmoji(e.emoji)}
+          />
+        }
+      >
+        <SmileOutlined style={{color: "#0147f3"}} />
+      </Popover>
+    </>
   );
 
+  function handleEmoji(emoji: string) {
+    setMessage((prevMessage) => prevMessage + emoji);
+  }
+
   function handleSend() {
+    console.log("here: ", message);
     if (message && socket) {
       socket.emit("message", {
         room,

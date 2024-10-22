@@ -51,14 +51,28 @@ export default function ProjectCard() {
       <Card
         style={{
           width: "100%",
+          height: "70px",
           borderRadius: "0px",
           border: "1px solid #d9d9d9",
           borderLeftColor: "white",
           borderBottomColor: "white",
+          padding: "0",
+        }}
+        styles={{
+          body: {
+            height: "100%",
+            padding: "0 24px",
+          },
         }}
       >
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <span style={{ display: "flex", alignItems: "center", gap: "14px" }}>
+        <div style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          height: "100%",
+          width: "100%", 
+        }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
             <FcBriefcase
               style={{
                 fontSize: "38px",
@@ -68,21 +82,16 @@ export default function ProjectCard() {
               }}
             />
             <h2 style={{ margin: 0, fontWeight: "bold" }}>{project.name}</h2>
-          </span>
+          </div>
 
-          <div
-            className="members"
-            style={{ display: "flex", alignItems: "center" }}
-          >
+          <div style={{ display: "flex", alignItems: "center" }}>
             <Avatar.Group
               size="large"
-              max={{
-                count: 3,
-                style: {
-                  color: "rgba(1,116,243,255)",
-                  border: "2px solid rgba(1,116,243,255)",
-                  backgroundColor: "rgba(203, 221, 241, 255)",
-                },
+              maxCount={3}
+              maxStyle={{
+                color: "rgba(1,116,243,255)",
+                backgroundColor: "rgba(203, 221, 241, 255)",
+                border: "2px solid rgba(1,116,243,255)",
               }}
             >
               {project.members?.map((member) => (

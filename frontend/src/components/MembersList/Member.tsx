@@ -52,7 +52,7 @@ export default function Member({
         }}
         styles={{
           body: {
-            height: "50px",
+            height: "45px",
             padding: 0,
             display: "flex",
             justifyContent: "center",

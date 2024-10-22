@@ -1,6 +1,6 @@
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Flex, Form, Input } from "antd";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import { AuthDto } from "../../types/auth.response.dto";
@@ -12,7 +12,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  async function handleLogin(e: React.FormEvent<HTMLFormElement>) {
+  async function handleLogin() {
     try {
       await login({ email, password } as AuthDto);
       navigate("/home");

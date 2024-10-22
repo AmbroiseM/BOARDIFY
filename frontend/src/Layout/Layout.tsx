@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import Header from "./Header";
-import Sidebar from "./Sidebar";
+import React from "react";
 import { ProjectProvider } from "../contexts/ProjectContext";
 import { SocketProvider } from "../contexts/SocketContext";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -10,12 +10,15 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
+    <div
+      id="layout"
+      style={{ display: "flex", flexDirection: "column", height: "100vh" }}
+    >
       <Header />
       <div
         style={{
           display: "flex",
-          height: "95vh",
+          height: "100%",
           width: "100%",
           overflow: "hidden",
         }}

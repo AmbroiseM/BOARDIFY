@@ -10,3 +10,16 @@
 .scroll::-webkit-scrollbar-thumb:hover {
     background: rgba(1,116,243,255);
 }
+
+
+@media (min-height: 721px) and (max-height: 1080px) {
+    .message-container {
+      height: calc(100vh - 220px);
+    }
+}
+  
+  @media (min-height: 400px) and (max-height: 720px) {
+    .message-container {
+        height: calc(100vh - 150px); 
+  }
+}
