@@ -8,6 +8,7 @@ export interface Message {
   senderId: number;
   roomId: string;
   senderFullName: string;
+  sendAt : Date
 }
 
 interface SocketContextType {
@@ -15,6 +16,7 @@ interface SocketContextType {
   allOnlineUsers: Record<number, string>;
   addMessage: (roomId: string, message: Message) => void;
   messages?: Record<string, Message[]>;
+
 }
 
 export const SocketContext = React.createContext<SocketContextType | undefined>(

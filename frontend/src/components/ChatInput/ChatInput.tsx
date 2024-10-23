@@ -52,13 +52,13 @@ export default function ChatInput({ room }: Props) {
   }
 
   function handleSend() {
-    console.log("here: ", message);
     if (message && socket) {
       socket.emit("message", {
         room,
         message,
         senderId: user?.id,
         senderFullName: user?.firstName + " " + user?.lastName,
+        sendAt : new Date()
       });
       setMessage("");
     }

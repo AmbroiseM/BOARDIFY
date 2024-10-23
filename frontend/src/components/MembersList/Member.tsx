@@ -83,7 +83,7 @@ export default function Member({
             </Avatar>
             <div style={{ display: "flex", flexDirection: "column" }}>
               <p style={{ margin: 0, fontWeight: "bold" }}>
-                {firstName} {lastName}{" "}
+                {firstName} {lastName.charAt(0).toUpperCase()}{"."}
                 {newMessages > 0 && (
                   <Badge style={{ marginLeft: "10px" }} count={newMessages} />
                 )}

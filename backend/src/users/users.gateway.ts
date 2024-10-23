@@ -19,7 +19,6 @@ export class UsersGateway implements OnGatewayConnection, OnGatewayDisconnect {
             const token = client.handshake.auth.token
             const payload = this.jwtService.verify(token)
             const userId = payload['sub'];
-            console.log('payload: ', payload)
             const userFullName = payload['firstName'] + ' ' + payload['lastName'];
             const projectRoom: string = `room_${payload['projectId']}`
 
@@ -51,7 +50,6 @@ export class UsersGateway implements OnGatewayConnection, OnGatewayDisconnect {
             this.server.emit('getOnlineUsers', Object.fromEntries(this.onlineUsers));
             client.leave(userId)
             client.leave(client.id)
-            console.log(`User ${userId} disconnected`);
         }
     }
 
@@ -71,13 +69,15 @@ export class UsersGateway implements OnGatewayConnection, OnGatewayDisconnect {
     }
 
     @SubscribeMessage('message')
-    handleMessage(client: Socket, payload: { room: string, message: string, senderId: number, senderFullName: string }): void {
+    handleMessage(client: Socket, payload: { room: string, message: string, senderId: number, senderFullName: string, sendAt: Date }): void {
+        console.log("payload: ", payload);
         if (client.rooms.has(payload.room)) {
             this.server.to(payload.room).emit('newMessage', {
                 roomId: payload.room,
                 content: payload.message,
                 senderId: payload.senderId,
-                senderFullName: payload.senderFullName
+                senderFullName: payload.senderFullName,
+                sendAt : payload.sendAt
             });
         } else {
             client.emit('error', 'You are not allowed to send messages to this room');
@@ -86,8 +86,6 @@ export class UsersGateway implements OnGatewayConnection, OnGatewayDisconnect {
 
     @SubscribeMessage('joinRoom')
     handleJoinRoom(client: Socket, roomId: string ) {
-
-
 
         client.join(roomId)
         const token = client.handshake.auth.token

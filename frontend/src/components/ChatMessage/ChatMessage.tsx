@@ -59,7 +59,6 @@ export default function ChatMessage({ room }: Props) {
                   marginTop: "30px",
                   marginRight: "5px",
                   fontSize: "15px",
-                  
                 }}
               >
                 {message.senderFullName.split(" ")[0][0] +
@@ -89,19 +88,33 @@ export default function ChatMessage({ room }: Props) {
                 }}
               >
                 {message.content}
+                <br></br>
               </div>
-              {message.senderId !== user?.id && (
-                <p
+              <p
+                style={{
+                  fontSize: "11px",
+                  margin: "0",
+                  color: "gray",
+                }}
+              >
+                <span
                   style={{
-                    fontSize: "11px",
-                    margin: "0",
-                    color: "gray",
-                    fontWeight: "500",
+                    fontWeight: "normal",
+                    float: user?.id !== message.senderId ? "left" : "right",
                   }}
                 >
-                  {message.senderFullName}
-                </p>
-              )}
+                  {message.senderId !== user?.id ? (
+                    <strong>{message.senderFullName}</strong>
+                  ) : null}
+                    {` ${new Date(message.sendAt)
+                      .getHours()
+                      .toString()
+                      .padStart(2, "0")}:${new Date(message.sendAt)
+                      .getMinutes()
+                      .toString()
+                      .padStart(2, "0")}`}
+                </span>
+              </p>
             </div>
           </div>
         ))}
